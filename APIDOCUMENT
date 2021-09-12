@@ -1,0 +1,16 @@
+----------------------------------------------------------------------
+LISTING ALL PRODUCT
+------------------------------------------------------------------------
+curl --location --request GET 'localhost:8082/api/product/list'
+
+----------------------------------------------
+FILTER API ON PRODUCT
+--------------------------------------------------
+curl --location --request POST 'localhost:8082/api/product/list/filter' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "gtPrice": 300,
+    "ltPrice": 150,
+    "rate": 3,
+    "title": "Product 1"
+}'
